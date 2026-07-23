@@ -11,44 +11,29 @@ import { Section, SectionHeader } from '@/components/layout';
 
 const faqs = [
   {
-    question: 'How long does it take to set up Clinora for my clinic?',
+    question: 'Do I need to change my phone number?',
     answer:
-      'Most clinics are up and running within a day. We handle the setup, connect your Google Sheet and Telegram, and customize the website with your clinic name, services, and branding.',
+      'No. Avenra works alongside your existing phone number and WhatsApp. Patients who prefer to call still can — Avenra simply gives them another way to reach you.',
   },
   {
-    question: 'Do I need any technical knowledge to use it?',
+    question: 'Does my receptionist need training?',
     answer:
-      'Not at all. Your secretary doesn\'t need to learn any software. Patients visit the website, fill a form, and your team gets a notification. That\'s it.',
+      'No training is needed. When a request comes in, your receptionist receives a Telegram notification with the patient\'s details and buttons to call or message them. That\'s the entire workflow.',
   },
   {
-    question: 'How do Telegram notifications work?',
+    question: 'How long does setup take?',
     answer:
-      'When a patient submits an appointment request, Clinora sends a message to a Telegram chat of your choice — your secretary, your doctor, or a team group. The message includes the patient\'s name, phone number, and preferred time, with quick action buttons.',
+      'Most clinics are live within a day. We set up your website, customize it with your clinic name and services, connect your Google Sheet and Telegram, and you\'re ready to receive requests.',
   },
   {
-    question: 'Can patients still contact us on WhatsApp?',
+    question: 'Can I request changes?',
     answer:
-      'Yes. The website includes a WhatsApp button so patients can message you directly. Clinora doesn\'t replace WhatsApp — it reduces the volume of messages by answering common questions on the website.',
+      'Yes. You can request changes to your website — services, pricing, hours, images, text — at any time. We handle the updates for you, usually within the same day.',
   },
   {
-    question: 'What happens to the appointment requests?',
+    question: 'Is it suitable for small clinics?',
     answer:
-      'Every request is saved automatically to a Google Sheet that you own and can share with your team. You can sort, filter, and track requests without any extra effort.',
-  },
-  {
-    question: 'Is Clinora available in Arabic and French?',
-    answer:
-      'Yes. The website can be displayed in Arabic, French, or both. We understand that your patients may prefer different languages, and the intake form adapts accordingly.',
-  },
-  {
-    question: 'Does this work for any type of clinic?',
-    answer:
-      'Clinora is designed for private clinics — dental, dermatology, pediatrics, gynecology, ophthalmology, orthopedics, and general practice. The form and services are customized to your specialty.',
-  },
-  {
-    question: 'How much does Clinora cost?',
-    answer:
-      'Pricing depends on your clinic\'s needs. We offer a simple monthly subscription with no hidden fees. Book a demo and we\'ll walk you through the options that fit your clinic.',
+      'Absolutely. Avenra is designed for private clinics with one or two receptionists. If you\'re handling calls, messages, and walk-ins with a small team, Avenra is built for exactly your situation.',
   },
 ];
 
@@ -58,7 +43,7 @@ export function FAQSection() {
       <SectionHeader
         eyebrow="FAQ"
         title="Questions, answered"
-        description="Everything you might want to know before booking a demo."
+        description="Everything you might want to know before booking a clinic audit."
       />
 
       <div className="mx-auto mt-12 max-w-3xl">

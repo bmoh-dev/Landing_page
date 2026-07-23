@@ -1,12 +1,11 @@
-import { Navigation } from '@/components/layout';
-import { Footer } from '@/components/layout';
+import { Navigation, Footer } from '@/components/layout';
 import { Hero } from '@/components/sections/hero';
 import { ProblemSection } from '@/components/sections/problem';
 import { SolutionSection } from '@/components/sections/solution';
 import { FeaturesSection } from '@/components/sections/features';
 import { TelegramPreviewSection } from '@/components/sections/telegram-preview';
-import { BenefitsSection } from '@/components/sections/benefits';
-import { WhyClinoraSection } from '@/components/sections/why-clinora';
+import { WhyAvenraSection } from '@/components/sections/why-avenra';
+import { TrustSection } from '@/components/sections/trust';
 import { FAQSection } from '@/components/sections/faq';
 import { FinalCTASection } from '@/components/sections/final-cta';
 
@@ -20,8 +19,8 @@ export default function Home() {
         <SolutionSection />
         <FeaturesSection />
         <TelegramPreviewSection />
-        <BenefitsSection />
-        <WhyClinoraSection />
+        <WhyAvenraSection />
+        <TrustSection />
         <FAQSection />
         <FinalCTASection />
       </main>

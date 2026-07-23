@@ -15,27 +15,9 @@ const manrope = Manrope({
 });
 
 export const metadata: Metadata = {
-  title: 'Clinora — Patient Intake System for Private Clinics',
+  title: 'Avenra — Patient Intake System for Private Clinics',
   description:
-    'Clinora helps private clinics receive appointment requests more efficiently while reducing repetitive work for secretaries. Built for clinics in Algeria and the MENA region.',
-  openGraph: {
-    title: 'Clinora — Patient Intake System for Private Clinics',
-    description:
-      'A calm, modern intake system for private clinics. Receive appointment requests, reduce repetitive work, and never miss a patient.',
-    images: [
-      {
-        url: 'https://bolt.new/static/og_default.png',
-      },
-    ],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    images: [
-      {
-        url: 'https://bolt.new/static/og_default.png',
-      },
-    ],
-  },
+    'Avenra helps private clinics receive and organize appointment requests more easily without changing their current workflow.',
 };
 
 export default function RootLayout({

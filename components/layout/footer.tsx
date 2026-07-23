@@ -11,14 +11,14 @@ const defaultColumns = [
       { label: 'Features', href: '#features' },
       { label: 'How it Works', href: '#how-it-works' },
       { label: 'FAQ', href: '#faq' },
-      { label: 'Book a Demo', href: '#book-demo' },
+      { label: 'Book a Clinic Audit', href: '#book-audit' },
     ],
   },
   {
     title: 'Company',
     links: [
-      { label: 'About', href: '#about' },
-      { label: 'Contact', href: '#contact' },
+      { label: 'About', href: '#why-avenra' },
+      { label: 'Contact', href: '#book-audit' },
       { label: 'WhatsApp', href: WHATSAPP_URL },
     ],
   },
@@ -38,7 +38,6 @@ interface FooterProps extends React.HTMLAttributes<HTMLElement> {
 function Footer({ columns = defaultColumns, className, ...props }: FooterProps) {
   return (
     <footer
-      id="contact"
       className={cn('border-t border-border bg-background', className)}
       {...props}
     >
@@ -47,12 +46,9 @@ function Footer({ columns = defaultColumns, className, ...props }: FooterProps) 
           <div className="col-span-2 md:col-span-1">
             <LogoFull />
             <p className="mt-4 max-w-xs text-small text-muted-foreground">
-              A calm, modern intake system for private clinics. Receive
-              appointment requests, reduce repetitive work, and never miss a
-              patient.
+              A simple patient intake layer for private clinics. Receive
+              appointment requests more easily without changing your workflow.
             </p>
-
-            {/* Social icons */}
             <div className="mt-5 flex items-center gap-2">
               <SocialIcon href={WHATSAPP_URL} label="WhatsApp">
                 <svg viewBox="0 0 24 24" className="h-4 w-4" fill="currentColor">
@@ -90,7 +86,7 @@ function Footer({ columns = defaultColumns, className, ...props }: FooterProps) 
         </div>
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-border pt-8 sm:flex-row">
           <p className="text-caption text-muted-foreground">
-            &copy; {new Date().getFullYear()} Clinora. All rights reserved.
+            &copy; {new Date().getFullYear()} Avenra. All rights reserved.
           </p>
           <p className="text-caption text-muted-foreground">
             Built in Algeria for the MENA region.

@@ -6,81 +6,67 @@ import {
   Clock,
   MessageCircle,
   Phone,
-  ShieldCheck,
-  Sparkles,
-  Users,
+  Send,
+  User,
 } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { FloatingCard } from '@/components/ui/special-cards';
 import { BlobBackground, GridBackground } from '@/components/layout';
-import { cn } from '@/lib/utils';
-
-const WHATSAPP_URL = 'https://wa.me/213000000000';
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden pt-16 pb-20 sm:pt-24 sm:pb-28 lg:pt-28 lg:pb-32">
-      {/* Backgrounds */}
+    <section className="relative overflow-hidden pt-12 pb-20 sm:pt-20 sm:pb-28 lg:pt-24 lg:pb-32">
       <BlobBackground />
-      <GridBackground className="opacity-50" />
+      <GridBackground className="opacity-40" />
 
       <div className="relative mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
-        <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
+        <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-12">
           {/* Left — copy */}
           <div className="flex flex-col items-start gap-6">
             <Badge variant="soft" className="gap-1.5">
-              <Sparkles className="h-3.5 w-3.5" />
-              Built for private clinics in Algeria
+              <span className="h-1.5 w-1.5 rounded-full bg-primary-600" />
+              For private clinics in Algeria & MENA
             </Badge>
 
             <h1 className="font-display text-display-lg text-foreground sm:text-display-xl">
-              Receive appointment requests{' '}
-              <span className="text-gradient-primary">without the chaos</span>
+              Help your clinic handle appointment requests more easily
             </h1>
 
             <p className="max-w-xl text-body-lg text-muted-foreground">
-              Clinora gives your clinic a modern website where patients request
-              appointments anytime. Every request lands in your spreadsheet and
-              pings your team on Telegram — so nothing slips through.
+              Patients request appointments online, even when your receptionist
+              is busy. Every request arrives instantly — organized, with patient
+              details — so your team can follow up without the chaos.
             </p>
 
             <div className="flex flex-col gap-3 sm:flex-row">
               <Button variant="primary" size="lg" asChild>
-                <a href="#book-demo">
-                  Book a Demo
+                <a href="#book-audit">
+                  Book a Clinic Audit
                   <ArrowRight className="h-4 w-4" />
                 </a>
               </Button>
               <Button variant="outline" size="lg" asChild>
-                <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
-                  <MessageCircle className="h-4 w-4" />
-                  Contact us on WhatsApp
-                </a>
+                <a href="#how-it-works">See How It Works</a>
               </Button>
             </div>
 
-            {/* Trust badges */}
-            <div className="mt-4 flex flex-wrap items-center gap-x-6 gap-y-2">
+            <div className="mt-2 flex flex-wrap items-center gap-x-6 gap-y-2">
               <div className="flex items-center gap-2 text-small text-muted-foreground">
-                <ShieldCheck className="h-4 w-4 text-primary-600" />
-                Patient data stays private
+                <CheckCircle2 className="h-4 w-4 text-primary-600" />
+                Works with your existing workflow
               </div>
               <div className="flex items-center gap-2 text-small text-muted-foreground">
-                <Clock className="h-4 w-4 text-primary-600" />
-                Set up in under a day
-              </div>
-              <div className="flex items-center gap-2 text-small text-muted-foreground">
-                <Users className="h-4 w-4 text-primary-600" />
-                Built for clinics, not hospitals
+                <CheckCircle2 className="h-4 w-4 text-primary-600" />
+                No training needed
               </div>
             </div>
           </div>
 
-          {/* Right — dashboard mockup */}
+          {/* Right — mockup */}
           <div className="relative">
-            <HeroDashboard />
+            <HeroMockup />
           </div>
         </div>
       </div>
@@ -88,12 +74,12 @@ export function Hero() {
   );
 }
 
-function HeroDashboard() {
+function HeroMockup() {
   return (
     <div className="relative">
-      {/* Main dashboard card */}
+      {/* Main: Clinic website with appointment form */}
       <div className="relative rounded-card border border-border bg-card shadow-floating">
-        {/* Browser chrome */}
+        {/* Browser bar */}
         <div className="flex items-center gap-2 border-b border-border px-4 py-3">
           <div className="flex gap-1.5">
             <div className="h-3 w-3 rounded-full bg-neutral-300" />
@@ -105,107 +91,88 @@ function HeroDashboard() {
           </div>
         </div>
 
-        {/* Dashboard body */}
+        {/* Body: appointment request form */}
         <div className="p-5">
-          {/* Header row */}
-          <div className="mb-5 flex items-center justify-between">
-            <div>
-              <p className="font-display text-h4 font-semibold text-foreground">
-                Today's Requests
-              </p>
-              <p className="text-caption text-muted-foreground">
-                Tuesday, July 23
-              </p>
+          <div className="mb-4">
+            <div className="mb-1 flex items-center gap-2">
+              <div className="h-6 w-6 rounded-button bg-primary" />
+              <div className="h-3 w-20 rounded-button bg-muted" />
             </div>
-            <Badge variant="soft">
-              <span className="mr-1 h-1.5 w-1.5 rounded-full bg-primary-600" />
-              3 new
-            </Badge>
+            <p className="font-display text-h4 font-semibold text-foreground">
+              Request an Appointment
+            </p>
+            <p className="text-caption text-muted-foreground">
+              Dr. Amira Benali — Dermatology
+            </p>
           </div>
 
-          {/* Stats row */}
-          <div className="mb-5 grid grid-cols-3 gap-3">
-            {[
-              { label: 'Requests', value: '12', icon: Calendar },
-              { label: 'Confirmed', value: '8', icon: CheckCircle2 },
-              { label: 'Pending', value: '4', icon: Clock },
-            ].map((stat) => (
-              <div
-                key={stat.label}
-                className="rounded-button border border-border bg-muted/30 p-3"
-              >
-                <stat.icon className="mb-2 h-4 w-4 text-primary-600" />
-                <p className="font-display text-h3 font-bold text-foreground">
-                  {stat.value}
-                </p>
-                <p className="text-caption text-muted-foreground">{stat.label}</p>
+          <div className="space-y-3">
+            {/* Form fields */}
+            <div className="space-y-1.5">
+              <div className="h-3 w-16 rounded-button bg-muted" />
+              <div className="h-10 rounded-input border border-border bg-muted/30" />
+            </div>
+            <div className="grid grid-cols-2 gap-3">
+              <div className="space-y-1.5">
+                <div className="h-3 w-12 rounded-button bg-muted" />
+                <div className="h-10 rounded-input border border-border bg-muted/30" />
               </div>
-            ))}
-          </div>
-
-          {/* Request list */}
-          <div className="space-y-2.5">
-            {[
-              { name: 'Yasmine K.', time: '10:00 AM', status: 'Confirmed' },
-              { name: 'Mohamed B.', time: '2:30 PM', status: 'Pending' },
-              { name: 'Lina H.', time: '4:00 PM', status: 'Pending' },
-            ].map((req, i) => (
-              <div
-                key={req.name}
-                className={cn(
-                  'flex items-center justify-between rounded-button border border-border bg-card p-3 transition-colors',
-                  i === 0 && 'border-success/30 bg-success/5'
-                )}
-              >
-                <div className="flex items-center gap-3">
-                  <div className="flex h-9 w-9 items-center justify-center rounded-button bg-primary-50 text-small font-semibold text-primary-700">
-                    {req.name.charAt(0)}
-                  </div>
-                  <div>
-                    <p className="text-small font-medium text-foreground">
-                      {req.name}
-                    </p>
-                    <p className="text-caption text-muted-foreground">{req.time}</p>
-                  </div>
-                </div>
-                <Badge variant={i === 0 ? 'success' : 'outline'}>
-                  {req.status}
-                </Badge>
+              <div className="space-y-1.5">
+                <div className="h-3 w-14 rounded-button bg-muted" />
+                <div className="h-10 rounded-input border border-border bg-muted/30" />
               </div>
-            ))}
+            </div>
+            <div className="flex items-center gap-2 rounded-input border border-primary-200 bg-primary-50/50 p-3">
+              <Calendar className="h-4 w-4 text-primary-600" />
+              <span className="text-small font-medium text-primary-700">
+                Wednesday, July 24 — 10:00 AM
+              </span>
+            </div>
+            <div className="h-10 rounded-button bg-primary" />
           </div>
         </div>
       </div>
 
-      {/* Floating card — Telegram notification */}
-      <FloatingCard
-        className="absolute -bottom-6 -left-4 w-64 p-4 sm:-left-8"
-        // subtle entrance
-      >
+      {/* Floating card: Telegram notification */}
+      <FloatingCard className="absolute -bottom-6 -left-4 w-64 p-4 sm:-left-8">
         <div className="flex items-start gap-3">
           <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-button bg-accent-50 text-accent-600">
-            <MessageCircle className="h-4 w-4" />
+            <Send className="h-4 w-4" />
           </div>
           <div className="flex-1">
             <p className="text-small font-semibold text-foreground">
               New request received
             </p>
             <p className="text-caption text-muted-foreground">
-              Yasmine K. — 10:00 AM tomorrow
+              Yasmine K. — Wed 10:00 AM
             </p>
+            <div className="mt-2 flex gap-1.5">
+              <div className="flex items-center gap-1 rounded-badge bg-primary px-2 py-0.5 text-caption font-medium text-primary-foreground">
+                <Phone className="h-2.5 w-2.5" />
+                Call
+              </div>
+              <div className="flex items-center gap-1 rounded-badge bg-success px-2 py-0.5 text-caption font-medium text-success-foreground">
+                <MessageCircle className="h-2.5 w-2.5" />
+                WhatsApp
+              </div>
+            </div>
           </div>
         </div>
       </FloatingCard>
 
-      {/* Floating card — call button */}
-      <FloatingCard className="absolute -top-4 -right-4 w-48 p-3.5 sm:-right-6">
+      {/* Floating card: patient info */}
+      <FloatingCard className="absolute -top-4 -right-4 w-52 p-3.5 sm:-right-6">
         <div className="flex items-center gap-3">
-          <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-button bg-primary text-primary-foreground">
-            <Phone className="h-4 w-4" />
+          <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-button bg-primary-50 text-primary-700">
+            <User className="h-4 w-4" />
           </div>
           <div>
-            <p className="text-small font-semibold text-foreground">Quick call</p>
-            <p className="text-caption text-muted-foreground">One tap to confirm</p>
+            <p className="text-small font-semibold text-foreground">
+              Patient details
+            </p>
+            <p className="text-caption text-muted-foreground">
+              Collected automatically
+            </p>
           </div>
         </div>
       </FloatingCard>

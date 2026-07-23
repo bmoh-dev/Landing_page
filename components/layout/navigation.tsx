@@ -19,16 +19,16 @@ interface NavigationProps {
 }
 
 const defaultItems: NavItem[] = [
-  { label: 'Features', href: '#features' },
+  { label: 'Problem', href: '#problem' },
   { label: 'How it Works', href: '#how-it-works' },
+  { label: 'Features', href: '#features' },
   { label: 'FAQ', href: '#faq' },
-  { label: 'Contact', href: '#contact' },
 ];
 
 function Navigation({
   items = defaultItems,
-  ctaLabel = 'Book a Demo',
-  ctaHref = '#book-demo',
+  ctaLabel = 'Book a Clinic Audit',
+  ctaHref = '#book-audit',
   className,
 }: NavigationProps) {
   const [open, setOpen] = React.useState(false);

@@ -17,21 +17,15 @@ function Logo({ size = 32, className, ...props }: LogoProps) {
       aria-hidden="true"
       {...props}
     >
-      <rect width="32" height="32" rx="8" fill="url(#cf-logo-grad)" />
+      <rect width="32" height="32" rx="8" fill="url(#av-logo-grad)" />
       <path
-        d="M11 9.5C11 8.67 11.67 8 12.5 8H15C15.83 8 16.5 8.67 16.5 9.5V22.5C16.5 23.33 15.83 24 15 24H12.5C11.67 24 11 23.33 11 22.5V9.5Z"
+        d="M9 22L13 10H16L20 22H17.5L16.75 19.5H12.25L11.5 22H9ZM12.75 17.5H16.25L14.5 12L12.75 17.5Z"
         fill="white"
-        fillOpacity="0.95"
       />
-      <path
-        d="M19 14.5C19 13.67 19.67 13 20.5 13C21.33 13 22 13.67 22 14.5V22.5C22 23.33 21.33 24 20.5 24C19.67 24 19 23.33 19 22.5V14.5Z"
-        fill="white"
-        fillOpacity="0.8"
-      />
-      <circle cx="20.5" cy="10" r="2" fill="white" fillOpacity="0.9" />
+      <circle cx="23" cy="11" r="2.5" fill="white" fillOpacity="0.8" />
       <defs>
         <linearGradient
-          id="cf-logo-grad"
+          id="av-logo-grad"
           x1="0"
           y1="0"
           x2="32"
@@ -64,11 +58,11 @@ function LogoFull({
         'inline-flex items-center gap-2.5 font-display text-h4 font-bold tracking-tight text-foreground',
         className
       )}
-      aria-label="Clinora home"
+      aria-label="Avenra home"
       {...props}
     >
       <Logo size={iconSize} />
-      <span>Clinora</span>
+      <span>Avenra</span>
     </a>
   );
 }

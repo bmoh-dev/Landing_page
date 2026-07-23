@@ -13,9 +13,7 @@ const featureCardVariants = cva(
         floating: 'border-border bg-card shadow-floating hover:shadow-floating hover:-translate-y-0.5',
       },
     },
-    defaultVariants: {
-      variant: 'default',
-    },
+    defaultVariants: { variant: 'default' },
   }
 );
 
@@ -28,20 +26,9 @@ export interface FeatureCardProps
   href?: string;
 }
 
-function FeatureCard({
-  className,
-  variant,
-  icon,
-  title,
-  description,
-  href,
-  ...props
-}: FeatureCardProps) {
+function FeatureCard({ className, variant, icon, title, description, href, ...props }: FeatureCardProps) {
   return (
-    <div
-      className={cn(featureCardVariants({ variant }), className)}
-      {...props}
-    >
+    <div className={cn(featureCardVariants({ variant }), className)} {...props}>
       {icon && (
         <div className="flex h-12 w-12 items-center justify-center rounded-button bg-primary-50 text-primary-600 transition-colors duration-200 group-hover:bg-primary-100">
           {icon}
@@ -49,16 +36,10 @@ function FeatureCard({
       )}
       <div className="flex-1 space-y-2">
         <div className="flex items-center gap-2">
-          <h3 className="font-display text-h4 font-semibold text-foreground">
-            {title}
-          </h3>
-          {href && (
-            <ArrowUpRight className="h-4 w-4 text-muted-foreground transition-all duration-200 group-hover:text-primary-600 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-          )}
+          <h3 className="font-display text-h4 font-semibold text-foreground">{title}</h3>
+          {href && <ArrowUpRight className="h-4 w-4 text-muted-foreground transition-all duration-200 group-hover:text-primary-600 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />}
         </div>
-        <p className="text-body text-muted-foreground leading-relaxed">
-          {description}
-        </p>
+        <p className="text-body text-muted-foreground leading-relaxed">{description}</p>
       </div>
     </div>
   );

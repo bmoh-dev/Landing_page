@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Send, Phone, MessageCircle, ExternalLink, Check } from 'lucide-react';
+import { Send, Phone, MessageCircle, ExternalLink, StickyNote } from 'lucide-react';
 import { Section, SectionHeader } from '@/components/layout';
 import { FloatingCard } from '@/components/ui/special-cards';
 import { Button } from '@/components/ui/button';
@@ -7,16 +7,15 @@ import { Badge } from '@/components/ui/badge';
 
 export function TelegramPreviewSection() {
   return (
-    <Section id="telegram-preview" className="border-t border-border">
+    <Section id="telegram-demo" className="border-t border-border">
       <SectionHeader
-        eyebrow="Telegram Notifications"
+        eyebrow="Telegram Notification"
         title="The moment a patient requests, your team knows"
         description="No refreshing a dashboard. No checking email. A clean notification arrives on Telegram with everything you need to act."
       />
 
       <div className="mt-12 flex justify-center">
         <div className="w-full max-w-md">
-          {/* Telegram-style message card */}
           <FloatingCard className="overflow-hidden p-0">
             {/* Telegram header */}
             <div className="flex items-center gap-3 border-b border-border bg-muted/40 px-5 py-4">
@@ -24,12 +23,8 @@ export function TelegramPreviewSection() {
                 <Send className="h-5 w-5" />
               </div>
               <div className="flex-1">
-                <p className="text-small font-semibold text-foreground">
-                  Clinora Bot
-                </p>
-                <p className="text-caption text-muted-foreground">
-                  just now
-                </p>
+                <p className="text-small font-semibold text-foreground">Avenra Bot</p>
+                <p className="text-caption text-muted-foreground">just now</p>
               </div>
               <Badge variant="soft-accent">bot</Badge>
             </div>
@@ -45,6 +40,15 @@ export function TelegramPreviewSection() {
                 <DetailRow label="Phone Number" value="+213 7 70 12 34 56" />
                 <DetailRow label="Preferred Date" value="Wednesday, July 24" />
                 <DetailRow label="Preferred Time" value="10:00 AM" />
+                <div className="rounded-button border border-border bg-muted/30 p-3">
+                  <div className="mb-1 flex items-center gap-1.5">
+                    <StickyNote className="h-3.5 w-3.5 text-muted-foreground" />
+                    <span className="text-caption font-semibold text-muted-foreground">Notes</span>
+                  </div>
+                  <p className="text-small text-foreground">
+                    First visit. Referral from Dr. Saidi. Allergic to penicillin.
+                  </p>
+                </div>
               </div>
 
               <div className="mt-5 flex flex-col gap-2.5 sm:flex-row">
@@ -58,14 +62,14 @@ export function TelegramPreviewSection() {
                 </Button>
                 <Button variant="ghost" size="sm" className="flex-1">
                   <ExternalLink className="h-3.5 w-3.5" />
-                  Open Sheet
+                  View Details
                 </Button>
               </div>
             </div>
 
             {/* Footer */}
             <div className="flex items-center gap-2 border-t border-border bg-muted/30 px-5 py-3">
-              <Check className="h-3.5 w-3.5 text-success" />
+              <div className="h-1.5 w-1.5 rounded-full bg-success" />
               <span className="text-caption text-muted-foreground">
                 Delivered to your team instantly
               </span>

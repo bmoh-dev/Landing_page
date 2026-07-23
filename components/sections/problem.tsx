@@ -2,9 +2,8 @@ import * as React from 'react';
 import {
   PhoneMissed,
   MessagesSquare,
-  Repeat2,
+  ClipboardList,
   CalendarX2,
-  UserRoundCog,
 } from 'lucide-react';
 import { Section, SectionHeader } from '@/components/layout';
 import { Card } from '@/components/ui/card';
@@ -12,33 +11,27 @@ import { Card } from '@/components/ui/card';
 const problems = [
   {
     icon: PhoneMissed,
-    title: 'Missed calls',
+    title: 'Patients call while the receptionist is busy',
     description:
-      'A patient calls during a busy hour. Nobody answers. They call the next clinic instead.',
+      'A patient calls during a consultation. Nobody answers. They hang up and call the next clinic.',
   },
   {
     icon: MessagesSquare,
-    title: 'Too many WhatsApp messages',
+    title: 'WhatsApp questions repeat every day',
     description:
-      'Your secretary juggles dozens of messages a day. Important details get buried in the chat.',
+      'Hours, location, fees, availability — the same questions arrive message after message, eating up your team\'s day.',
   },
   {
-    icon: Repeat2,
-    title: 'Repeated questions',
+    icon: ClipboardList,
+    title: 'Appointment details are exchanged manually',
     description:
-      'Every patient asks the same things: hours, location, pricing. It eats up the whole day.',
+      'Names, phone numbers, and preferred times get typed and retyped across messages, notes, and paper.',
   },
   {
     icon: CalendarX2,
-    title: 'Lost appointments',
+    title: 'Some requests are delayed or forgotten',
     description:
-      'A message gets forgotten. A note on paper disappears. The slot stays empty.',
-  },
-  {
-    icon: UserRoundCog,
-    title: 'Overworked secretary',
-    description:
-      'Between phone calls, messages, and walk-ins, your team has no time to breathe.',
+      'A message gets buried. A note disappears. The slot stays empty, and the patient goes elsewhere.',
   },
 ];
 
@@ -46,14 +39,14 @@ export function ProblemSection() {
   return (
     <Section id="problem" className="border-t border-border">
       <SectionHeader
-        eyebrow="The Problem"
-        title="Running a clinic shouldn't feel like firefighting"
-        description="Every day, private clinics lose patients to small problems that add up fast."
+        eyebrow="The Daily Reality"
+        title="Your receptionist can't answer every call"
+        description="It's not about effort. It's about having one person handle calls, messages, walk-ins, and paperwork — all at the same time."
       />
 
-      <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="mt-12 grid gap-5 sm:grid-cols-2">
         {problems.map((p) => (
-          <Card key={p.title} className="p-6">
+          <Card key={p.title} className="p-7">
             <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-button bg-error/5 text-error">
               <p.icon className="h-6 w-6" strokeWidth={1.5} />
             </div>

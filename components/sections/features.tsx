@@ -1,72 +1,57 @@
 import * as React from 'react';
 import {
   Globe,
-  FileText,
   MessageCircle,
-  HelpCircle,
-  MapPin,
-  Sheet,
   Send,
+  CalendarCheck,
+  HelpCircle,
   Smartphone,
-  Zap,
 } from 'lucide-react';
 import { Section, SectionHeader } from '@/components/layout';
-import { FeatureCard } from '@/components/ui/feature-card';
+import { Card } from '@/components/ui/card';
 
 const features = [
   {
     icon: Globe,
-    title: 'Modern Website',
-    description:
-      'A clean, fast site that presents your clinic professionally to every visitor.',
-  },
-  {
-    icon: FileText,
-    title: 'Appointment Request Form',
-    description:
-      'Patients fill a short form with their details and preferred time — no phone call needed.',
-  },
-  {
-    icon: MessageCircle,
-    title: 'WhatsApp Button',
-    description:
-      'A one-tap button lets patients reach you directly on WhatsApp for quick questions.',
+    benefit: 'Receive more appointment requests',
+    explanation:
+      'Patients have an easy way to request appointments instead of only calling — even after hours or during busy moments.',
+    poweredBy: 'Modern clinic website + appointment request form',
   },
   {
     icon: HelpCircle,
-    title: 'FAQ Section',
-    description:
-      'Answer the common questions once — hours, location, pricing — right on the page.',
-  },
-  {
-    icon: MapPin,
-    title: 'Google Maps',
-    description:
-      'Patients see exactly where you are and get directions without leaving the site.',
-  },
-  {
-    icon: Sheet,
-    title: 'Google Sheets Integration',
-    description:
-      'Every request is saved automatically to a shared spreadsheet your team can access.',
+    benefit: 'Reduce receptionist workload',
+    explanation:
+      'Common questions get answered on the website, and patient information is collected automatically — no manual data entry.',
+    poweredBy: 'FAQ section + WhatsApp access button',
   },
   {
     icon: Send,
-    title: 'Telegram Notifications',
-    description:
-      'Get an instant message on Telegram with patient details the moment a request comes in.',
+    benefit: 'Never miss a new request',
+    explanation:
+      'The receptionist receives patient details immediately when a request comes in — no refreshing, no checking, no waiting.',
+    poweredBy: 'Telegram notifications + organized request data',
+  },
+  {
+    icon: CalendarCheck,
+    benefit: 'Keep appointments organized',
+    explanation:
+      'Every request is saved in a shared spreadsheet your team can access anytime. Sort, filter, and follow up without losing track.',
+    poweredBy: 'Google Sheets integration',
+  },
+  {
+    icon: MessageCircle,
+    benefit: 'Stay reachable on WhatsApp',
+    explanation:
+      'Patients who prefer messaging can reach you with one tap. Avenra doesn\'t replace WhatsApp — it reduces the volume of repetitive messages.',
+    poweredBy: 'WhatsApp button on every page',
   },
   {
     icon: Smartphone,
-    title: 'Mobile Responsive',
-    description:
-      'Looks and works perfectly on every phone, tablet, and desktop your patients use.',
-  },
-  {
-    icon: Zap,
-    title: 'Fast Performance',
-    description:
-      'Pages load in under a second. No one waits, and no one leaves out of frustration.',
+    benefit: 'Look professional on every device',
+    explanation:
+      'Your clinic website works perfectly on phones, tablets, and desktops — because that\'s what your patients are using.',
+    poweredBy: 'Mobile-responsive design + fast performance',
   },
 ];
 
@@ -74,19 +59,34 @@ export function FeaturesSection() {
   return (
     <Section id="features" className="border-t border-border">
       <SectionHeader
-        eyebrow="Features"
-        title="Everything your clinic needs, nothing it doesn't"
-        description="Each feature is designed to reduce repetitive work and help patients reach you more easily."
+        eyebrow="Features with Outcomes"
+        title="What changes for your clinic"
+        description="Each capability is designed around a real outcome — not just a feature for the sake of it."
       />
 
       <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
         {features.map((f) => (
-          <FeatureCard
-            key={f.title}
-            icon={<f.icon className="h-6 w-6" strokeWidth={1.5} />}
-            title={f.title}
-            description={f.description}
-          />
+          <Card key={f.benefit} className="flex flex-col p-6">
+            <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-button bg-primary-50 text-primary-600">
+              <f.icon className="h-6 w-6" strokeWidth={1.5} />
+            </div>
+
+            <h3 className="mb-2 font-display text-h4 font-semibold text-foreground">
+              {f.benefit}
+            </h3>
+            <p className="mb-4 flex-1 text-body text-muted-foreground leading-relaxed">
+              {f.explanation}
+            </p>
+
+            <div className="border-t border-border pt-4">
+              <p className="text-caption font-semibold uppercase tracking-wide text-muted-foreground">
+                Powered by
+              </p>
+              <p className="mt-1 text-small font-medium text-primary-700">
+                {f.poweredBy}
+              </p>
+            </div>
+          </Card>
         ))}
       </div>
     </Section>

@@ -1,8 +1,9 @@
+'use client';
+
 import * as React from 'react';
 import { Slot } from '@radix-ui/react-slot';
 import { cva, type VariantProps } from 'class-variance-authority';
 import { Loader2 } from 'lucide-react';
-
 import { cn } from '@/lib/utils';
 
 const buttonVariants = cva(
@@ -10,18 +11,12 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        primary:
-          'bg-primary text-primary-foreground shadow-primary hover:bg-primary-700 hover:shadow-lg',
-        secondary:
-          'bg-secondary text-secondary-foreground shadow-sm hover:bg-secondary-600 hover:shadow-md',
-        outline:
-          'border border-border bg-card text-foreground shadow-sm hover:border-primary-300 hover:bg-primary-50 hover:text-primary-700',
-        ghost:
-          'text-foreground hover:bg-muted hover:text-foreground',
-        destructive:
-          'bg-error text-error-foreground shadow-sm hover:bg-error/90',
-        link:
-          'text-primary-600 underline-offset-4 hover:text-primary-700 hover:underline',
+        primary: 'bg-primary text-primary-foreground shadow-primary hover:bg-primary-700 hover:shadow-lg',
+        secondary: 'bg-secondary text-secondary-foreground shadow-sm hover:bg-secondary-600 hover:shadow-md',
+        outline: 'border border-border bg-card text-foreground shadow-sm hover:border-primary-300 hover:bg-primary-50 hover:text-primary-700',
+        ghost: 'text-foreground hover:bg-muted hover:text-foreground',
+        destructive: 'bg-error text-error-foreground shadow-sm hover:bg-error/90',
+        link: 'text-primary-600 underline-offset-4 hover:text-primary-700 hover:underline',
       },
       size: {
         sm: 'h-9 px-4 text-small',
@@ -33,10 +28,7 @@ const buttonVariants = cva(
         'icon-lg': 'h-12 w-12',
       },
     },
-    defaultVariants: {
-      variant: 'primary',
-      size: 'default',
-    },
+    defaultVariants: { variant: 'primary', size: 'default' },
   }
 );
 
@@ -49,14 +41,9 @@ export interface ButtonProps
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, variant, size, asChild = false, loading = false, children, disabled, ...props }, ref) => {
-    const Comp = asChild ? Slot : 'button';
     if (asChild) {
       return (
-        <Slot
-          className={cn(buttonVariants({ variant, size, className }))}
-          ref={ref}
-          {...props}
-        >
+        <Slot className={cn(buttonVariants({ variant, size, className }))} ref={ref} {...props}>
           {children}
         </Slot>
       );
